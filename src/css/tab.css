@@ -1,7 +1,8 @@
 
 .tab, .newtab {
-	position: absolute;
-
+	flex: 1 1 90px;
+	max-width: 150px;
+	margin: 2px;
 	cursor: pointer;
 
 	_transition: all 100ms cubic-bezier(.08,.82,.17,1);
@@ -17,11 +18,8 @@
 }
 
 .tab .inner, .newtab .inner {
-	position: absolute;
-	top: 4px;
-	left: 4px;
-	right: 4px;
-	bottom: 4px;
+	position: relative;
+	padding-top: 70%; /* 100:70 */
 }
 
 .tab.inactive .inner {

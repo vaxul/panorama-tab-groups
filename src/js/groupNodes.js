@@ -565,17 +565,17 @@ function updateGroupFit(group) {
                         childNodes[i].classList.remove('small');
                 }
 
-                childNodes[i].style.width = w + 'px';
-                childNodes[i].style.height = h + 'px';
-                childNodes[i].style.left = (w * (index % Math.floor(fit.pitch))) + 'px';
-                childNodes[i].style.top = (h * Math.floor(index / Math.floor(fit.pitch))) + 'px';
-
-                if(deck){
-                        childNodes[i].style.left = 0 + 'px';
-                        childNodes[i].style.top = 0 + 'px';
-                }
-
-                childNodes[i].style.zIndex = index;
+                // childNodes[i].style.width = w + 'px';
+                // childNodes[i].style.height = h + 'px';
+                // childNodes[i].style.left = (w * (index % Math.floor(fit.pitch))) + 'px';
+                // childNodes[i].style.top = (h * Math.floor(index / Math.floor(fit.pitch))) + 'px';
+								//
+                // if(deck){
+                //         childNodes[i].style.left = 0 + 'px';
+                //         childNodes[i].style.top = 0 + 'px';
+                // }
+								//
+                // childNodes[i].style.zIndex = index;
 
                 index++;
         }
