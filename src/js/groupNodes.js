@@ -432,16 +432,16 @@ function resizeGroups(groupId, groupRect) {
 
 			// ----
 
-			node.style.top		= (rect.y * groupsRect.height) + 'px';
-			node.style.right	= groupsRect.width - ((rect.x + rect.w) * groupsRect.width)  + 'px';
-			node.style.bottom	= groupsRect.height - ((rect.y + rect.h) * groupsRect.height) + 'px';
-			node.style.left		= (rect.x * groupsRect.width)  + 'px';
+			// node.style.top		= (rect.y * groupsRect.height) + 'px';
+			// node.style.right	= groupsRect.width - ((rect.x + rect.w) * groupsRect.width)  + 'px';
+			// node.style.bottom	= groupsRect.height - ((rect.y + rect.h) * groupsRect.height) + 'px';
+			// node.style.left		= (rect.x * groupsRect.width)  + 'px';
 
 			var zIndex = group.id;
 			if (group.lastMoved) {
 				zIndex = group.lastMoved.toString().substr(-9);
 			}
-			node.style.zIndex	= zIndex;
+			// node.style.zIndex	= zIndex;
 
 			updateGroupFit(group);
         });

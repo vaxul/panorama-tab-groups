@@ -1,14 +1,15 @@
 
 .group {
-	position: absolute;
+	display: flex;
+	position: relative;
 }
 
 .group > .inner {
-	position: absolute;
-	top: 4px;
-	left: 4px;
-	right: 4px;
-	bottom: 4px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 4px;
+	position: relative;
 
 	border: rgba(12, 12, 13, 0.2) 1px solid;
 	border-radius: 4px;
@@ -16,29 +17,11 @@
 	background-color: #ededf0;
 }
 
-.group > .inner:before {
-	content: '';
-
-	position: absolute;
-	z-index: -1;
-
-	top: -2px;
-	left: -2px;
-	right: -2px;
-	bottom: -2px;
-
-	border: 1px solid #ffffff;
-	border-radius: 5px;
-}
-
 .group .header {
 	height: 23px;
+	margin: 5px 10px 0;
 
-	position: absolute;
-	top: 5px;
-	right: 10px;
-	left: 10px;
-	z-index: 100;
+	position: relative;
 
 	cursor: move;
 }
@@ -129,11 +112,12 @@
 }
 
 .group .content {
-	position: absolute;
-	top: 28px;
-	right: 4px;
-	left: 4px;
-	bottom: 4px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+	align-content: flex-start;
+	margin: 2px;
 }
 
 .group .top {
