@@ -1,6 +1,10 @@
+* {
+	box-sizing: border-box;
+}
+
 body {
-	display: grid;
-	grid-template-rows: 50px 1fr;
+	display: flex;
+	flex-direction: column;
 	height: 100vh;
 	margin: 0;
 
@@ -20,6 +24,7 @@ body {
 
 #toolbar {
 	display: flex;
+	flex-wrap: wrap;
 
 	border-bottom: rgba(12, 12, 13, 0.1) 1px solid;
 
