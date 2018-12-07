@@ -81,7 +81,6 @@ body {
 }
 
 #pinnedTabs .tab .inner {
-	padding-top: 100%;
 	background-image: none !important;
 	border: 0;
 }
@@ -92,7 +91,7 @@ body {
 }
 
 #pinnedTabs .tab .thumbnail {
-	bottom: 0;
+	padding-top: 100%;
 }
 
 .drag_indicator {

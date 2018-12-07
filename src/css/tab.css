@@ -1,25 +1,24 @@
 
 .tab, .newtab {
-	flex: 1 1 90px;
+	background-color: #fff;
+	border: 1px solid rgba(12, 12, 13, 0.2);
 	max-width: 150px;
 	margin: 2px;
+	padding: 3px 3px 0;
 	cursor: pointer;
+
+	position: relative;
 
 	_transition: all 100ms cubic-bezier(.08,.82,.17,1);
 	_transition-property: width, height, top, left;
 }
 
-.tab:hover .inner {
-	outline-color: #ff9400 !important;
+.tab:hover {
+	border-color: #ff9400 !important;
 }
 
-.tab.selected .inner {
-	outline: #45a1ff 2px solid !important;
-}
-
-.tab .inner, .newtab .inner {
-	position: relative;
-	padding-top: 70%; /* 100:70 */
+.tab.selected {
+	border-color: #45a1ff 2px solid !important;
 }
 
 .tab.inactive .inner {
@@ -27,24 +26,22 @@
 }
 
 .tab .inner {
-	border: 3px solid #ffffff;
-
-	outline: 1px solid rgba(12, 12, 13, 0.2);
-
-	background-color: #ffffff;
-
+	position: relative;
 	transition: opacity 500ms cubic-bezier(.08,.82,.17,1), transform 500ms cubic-bezier(.08,.82,.17,1);
 }
 
-.newtab .inner {
+.newtab {
 	border: rgba(12, 12, 13, 1) 2px dashed;
+	opacity: 0.2;
+}
+
+.newtab .inner {
+	padding-top: 78.26755509994874%;
 
 	background-image: url(/icons/plus_dark.svg);
 	background-repeat: no-repeat;
 	background-size: 16px;
 	background-position: center;
-
-	opacity: 0.2;
 }
 
 .tab.drag .inner {
@@ -58,11 +55,7 @@
 }
 
 .tab .thumbnail {
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 20px;
-	left: 0;
+	padding-top: 55%; /* 100:55 */
 
 	background-color: #f9f9fa;
 	background-size: cover;
@@ -106,16 +99,9 @@
 }
 
 .tab .name {
-	height: 20px;
-
-	position: absolute;
-	bottom: 0;
-	left: 2px;
-	right: 2px;
-
 	font-size: 12px;
+	line-height: 20px;
 	text-align: center;
-	line-height: 22px;
 	overflow: hidden;
 	white-space: nowrap;
 }
