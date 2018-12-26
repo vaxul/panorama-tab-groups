@@ -1,10 +1,34 @@
+:root {
+	--body-background-color: #d7d7db;
+	--toolbar-border-color: rgba(12, 12, 13, 0.1);
+	--toolbar-button-hover: rgba(12, 12, 13, 0.1);
+	--toolbar-button-active: rgba(12, 12, 13, 0.15);
+	--toolbar-button-icon-new-group: url(/icons/plus_dark.svg);
+	--toolbar-button-icon-settings: url(/icons/preferences_dark.svg);
+	--pinnedTabs-border-color: rgba(12, 12, 13, 0.1);
+}
+
+.theme-dark {
+	--body-background-color: #2a2a2e;
+	--toolbar-border-color: rgba(249, 249, 250, 0.2);
+	--toolbar-button-hover: rgba(249, 249, 250, 0.25);
+	--toolbar-button-active: rgba(249, 249, 250, 0.25);
+	--toolbar-button-icon-new-group: url(/icons/plus_light.svg);
+	--toolbar-button-icon-settings: url(/icons/preferences_light.svg);
+	--pinnedTabs-border-color: rgba(249, 249, 250, 0.2);
+}
+
+* {
+	box-sizing: border-box;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 	margin: 0;
 
-	background-color: #f9f9fa;
+	background-color: var(--body-background-color);
 
 	font-family: sans-serif;
 	-moz-user-select: none;
@@ -22,7 +46,7 @@ body {
 	flex-wrap: wrap;
 	padding: 4px;
 
-	border-bottom: 1px solid rgba(12, 12, 13, 0.1);
+	border-bottom: 1px solid var(--toolbar-border-color);
 
 	background-color: inherit;
 }
@@ -39,24 +63,24 @@ body {
 }
 
 #toolbar .button:hover {
-	background-color: rgba(12, 12, 13, 0.1);
+	background-color: var(--toolbar-button-hover);
 }
 
 #toolbar .button:active {
-	background-color: rgba(12, 12, 13, 0.15);
+	background-color: var(--toolbar-button-active);
 }
 
 #newGroup {
-	background-image: url(/icons/plus_dark.svg);
+	background-image: var(--toolbar-button-icon-new-group);
 }
 
 #settings {
-	background-image: url(/icons/preferences_dark.svg);
+	background-image: var(--toolbar-button-icon-settings);
 }
 
 #pinnedTabs {
 	display: flex;
-	border-left: 1px solid #ccc;
+	border-left: 1px solid var(--pinnedTabs-border-color);
 	margin-left: 4px;
 	padding: 0 4px;
 }
@@ -114,22 +138,22 @@ body {
 }
 
 .toolbar-right #toolbar {
-	border-left: 1px solid rgba(12, 12, 13, 0.1);
+	border-left: 1px solid var(--toolbar-border-color);
 }
 
 .toolbar-bottom #toolbar {
-	border-top: 1px solid rgba(12, 12, 13, 0.1);
+	border-top: 1px solid var(--toolbar-border-color);
 	border-bottom: none;
 }
 
 .toolbar-left #toolbar {
-	border-right: 1px solid rgba(12, 12, 13, 0.1);
+	border-right: 1px solid var(--toolbar-border-color);
 }
 
 .toolbar-right #pinnedTabs,
 .toolbar-left #pinnedTabs {
 	flex-direction: column;
-	border-top: 1px solid #ccc;
+	border-top: 1px solid var(--pinnedTabs-border-color);
 	border-left: none;
 	margin-top: 4px;
 	margin-left: 0;

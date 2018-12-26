@@ -1,3 +1,28 @@
+:root {
+	--tab-inner-outline-color: rgba(12, 12, 13, 0.2);
+	--tab-inner-border-color: #fff;
+	--tab-inner-background-color: #fff;
+	--tab-inactive-inner-opacity: 0.75;
+	--newtab-inner-border-color: rgba(12, 12, 13, 1);
+	--newtab-inner-icon: url(/icons/plus_dark.svg);
+	--newtab-inner-opacity: 0.2;
+	--tab-favicon-border-color: #fff;
+	--tab-favicon-background-color: #fff;
+	--tab-name-color: inherit;
+}
+
+.theme-dark {
+	--tab-inner-outline-color: #58585b;
+	--tab-inner-border-color: #38383d;
+	--tab-inner-background-color: #38383d;
+	--tab-inactive-inner-opacity: 0.6;
+	--newtab-inner-border-color: rgba(249, 249, 250, 1);
+	--newtab-inner-icon: url(/icons/plus_light.svg);
+	--newtab-inner-opacity: 0.25;
+	--tab-favicon-border-color: #38383d;
+	--tab-favicon-background-color: #38383d;
+	--tab-name-color: #d7d7db;
+}
 
 .tab, .newtab {
 	position: absolute;
@@ -25,28 +50,28 @@
 }
 
 .tab.inactive .inner {
-	opacity: 0.75;
+	opacity: var(--tab-inactive-inner-opacity);
 }
 
 .tab .inner {
-	border: 3px solid #ffffff;
+	border: 3px solid var(--tab-inner-border-color);
 
-	outline: 1px solid rgba(12, 12, 13, 0.2);
+	outline: 1px solid var(--tab-inner-outline-color);
 
-	background-color: #ffffff;
+	background-color: var(--tab-inner-background-color);
 
 	transition: opacity 500ms cubic-bezier(.08,.82,.17,1), transform 500ms cubic-bezier(.08,.82,.17,1);
 }
 
 .newtab .inner {
-	border: rgba(12, 12, 13, 1) 2px dashed;
+	border: 2px dashed var(--newtab-inner-border-color);
 
-	background-image: url(/icons/plus_dark.svg);
+	background-image: var(--newtab-inner-icon);
 	background-repeat: no-repeat;
 	background-size: 16px;
 	background-position: center;
 
-	opacity: 0.2;
+	opacity: var(--newtab-inner-opacity);
 }
 
 .tab.drag .inner {
@@ -79,11 +104,11 @@
 	left: 0;
 	top: 0;
 
-	border-right: #ffffff 3px solid;
-	border-bottom: #ffffff 3px solid;
+	border-right: 3px solid var(--tab-favicon-border-color);
+	border-bottom: 3px solid var(--tab-favicon-border-color);
 	border-radius: 0 0 2px 0;
 
-	background-color: #ffffff;
+	background-color: var(--tab-favicon-background-color);
 	background-size: contain;
 
 	display: none;
@@ -108,6 +133,7 @@
 }
 
 .tab .name {
+	color: var(--tab-name-color);
 	height: 20px;
 
 	position: absolute;
@@ -120,12 +146,6 @@
 	line-height: 22px;
 	overflow: hidden;
 	white-space: nowrap;
-}
-
-
-.tab.small .inner {
-	_border-bottom-width: 20px;
-	_border-bottom-style: solid;
 }
 
 .tab.small .thumbnail {

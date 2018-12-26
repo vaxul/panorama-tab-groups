@@ -1,3 +1,24 @@
+:root {
+	--group-inner-border-color: rgba(12, 12, 13, 0.2);
+	--group-inner-background-color: #ededf0;
+	--group-header-input-border-color: rgba(12, 12, 13, 0.2);
+	--group-header-input-background-color: #f9f9f9;
+	--group-header-input-color: #737373;
+	--group-header-input-edit-color: #2a2a2e;
+	--group-header-tab_count-background-color: rgba(12, 12, 13, 0.2);
+	--group-header-tab_count-color: #fff;
+	--group-header-close-icon: url(/icons/group_close.svg);
+}
+
+.theme-dark {
+	--group-inner-border-color: rgba(249, 249, 250, 0.2);
+	--group-inner-background-color: #0c0c0d;
+	--group-header-input-color: #b1b1b3;
+	--group-header-input-edit-color: #f9f9fa;
+	--group-header-tab_count-background-color: rgba(249, 249, 250, 0.2);
+	--group-header-tab_count-color: #b1b1b3;
+	--group-header-close-icon: url(/icons/group_close_dark.svg);
+}
 
 .group {
 	display: flex;
@@ -13,10 +34,10 @@
 	right: 4px;
 	bottom: 4px;
 
-	border: rgba(12, 12, 13, 0.2) 1px solid;
+	border: 1px solid var(--group-inner-border-color);
 	border-radius: 4px;
 
-	background-color: #ededf0;
+	background-color: var(--group-inner-background-color);
 	box-shadow: 0 0 1px #fff;
 }
 
@@ -34,7 +55,7 @@
 .group .header .name {
 	padding: 0 5px 0 0;
 
-	color: #737373;
+	color: var(--group-header-input-color);
 	font-size: 13px;
 	line-height: 18px;
 	white-space: nowrap;
@@ -64,13 +85,12 @@
 .group .header.edit input {
 	flex: 1;
 	display: block;
-
-	color: #2a2a2e;
-	background: #f9f9f9;
-	border: rgba(12, 12, 13, 0.2) 1px solid;
+	border: 1px solid var(--group-header-input-border-color);
 	border-radius: 4px;
-	padding: 4px 0px 4px 9px;
 	margin: -4px 5px 0 -9px;
+	padding: 4px 0px 4px 9px;
+	background: var(--group-header-input-background-color);
+	color: var(--group-header-input-edit-color);
 }
 
 .group .header.edit .name {
@@ -88,9 +108,9 @@
 
 	border-radius: 0 0 3px 3px;
 
-	background-color: rgba(12, 12, 13, 0.2);
+	background-color: var(--group-header-tab_count-background-color);
 
-	color: #ffffff;
+	color: var(--group-header-tab_count-color);
 	font-size: 12px;
 	font-family: inherit;
 	font-weight: bold;
@@ -105,7 +125,7 @@
 
 	cursor: pointer;
 
-	background-image: url(/icons/group_close.svg);
+	background-image: var(--group-header-close-icon);
 	background-repeat: no-repeat;
 	background-size: 12px;
 	background-position: center;
