@@ -1,161 +1,155 @@
 :root {
-	--body-background-color: #d7d7db;
-	--toolbar-border-color: rgba(12, 12, 13, 0.1);
-	--toolbar-button-hover: rgba(12, 12, 13, 0.1);
-	--toolbar-button-active: rgba(12, 12, 13, 0.15);
-	--toolbar-button-icon-new-group: url(/icons/plus_dark.svg);
-	--toolbar-button-icon-settings: url(/icons/preferences_dark.svg);
-	--pinnedTabs-border-color: rgba(12, 12, 13, 0.1);
+  --body-background-color: #d7d7db;
+  --toolbar-border-color: rgba(12, 12, 13, 0.1);
+  --toolbar-button-hover: rgba(12, 12, 13, 0.1);
+  --toolbar-button-active: rgba(12, 12, 13, 0.15);
+  --toolbar-button-icon-new-group: url(/icons/plus_dark.svg);
+  --toolbar-button-icon-settings: url(/icons/preferences_dark.svg);
+  --pinnedTabs-border-color: rgba(12, 12, 13, 0.1);
 }
 
 .theme-dark {
-	--body-background-color: #2a2a2e;
-	--toolbar-border-color: rgba(249, 249, 250, 0.2);
-	--toolbar-button-hover: rgba(249, 249, 250, 0.25);
-	--toolbar-button-active: rgba(249, 249, 250, 0.25);
-	--toolbar-button-icon-new-group: url(/icons/plus_light.svg);
-	--toolbar-button-icon-settings: url(/icons/preferences_light.svg);
-	--pinnedTabs-border-color: rgba(249, 249, 250, 0.2);
+  --body-background-color: #2a2a2e;
+  --toolbar-border-color: rgba(249, 249, 250, 0.2);
+  --toolbar-button-hover: rgba(249, 249, 250, 0.25);
+  --toolbar-button-active: rgba(249, 249, 250, 0.25);
+  --toolbar-button-icon-new-group: url(/icons/plus_light.svg);
+  --toolbar-button-icon-settings: url(/icons/preferences_light.svg);
+  --pinnedTabs-border-color: rgba(249, 249, 250, 0.2);
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	margin: 0;
-
-	background-color: var(--body-background-color);
-
-	font-family: sans-serif;
-	-moz-user-select: none;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--body-background-color);
+  font-family: sans-serif;
+  -moz-user-select: none;
 }
 
 #groups {
-	flex-grow: 1;
-	margin: 4px;
-	position: relative;
-	overflow: auto;
+  flex-grow: 1;
+  margin: 4px;
+  position: relative;
+  overflow: auto;
 }
 
 #toolbar {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 4px;
-
-	border-bottom: 1px solid var(--toolbar-border-color);
-
-	background-color: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--toolbar-border-color);
+  padding: 4px;
+  background-color: inherit;
 }
 
 #toolbar .button {
-	width: 28px;
-	height: 28px;
-	margin: 4px;
-
-	border-radius: 4px;
-
-	background-repeat: no-repeat;
-	background-position: center;
+  border-radius: 4px;
+  width: 28px;
+  height: 28px;
+  margin: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #toolbar .button:hover {
-	background-color: var(--toolbar-button-hover);
+  background-color: var(--toolbar-button-hover);
 }
 
 #toolbar .button:active {
-	background-color: var(--toolbar-button-active);
+  background-color: var(--toolbar-button-active);
 }
 
 #newGroup {
-	background-image: var(--toolbar-button-icon-new-group);
+  background-image: var(--toolbar-button-icon-new-group);
 }
 
 #settings {
-	background-image: var(--toolbar-button-icon-settings);
+  background-image: var(--toolbar-button-icon-settings);
 }
 
 #pinnedTabs {
-	display: flex;
-	border-left: 1px solid var(--pinnedTabs-border-color);
-	margin-left: 4px;
-	padding: 0 4px;
+  display: flex;
+  border-left: 1px solid var(--pinnedTabs-border-color);
+  margin-left: 4px;
+  padding: 0 4px;
 }
 
 #pinnedTabs .tab {
-	width: 28px;
-	height: 28px;
-	margin: 4px;
-	position: relative;
-	background: #fff;
+  width: 28px;
+  height: 28px;
+  margin: 4px;
+  background: #fff;
+  position: relative;
 }
 
 #pinnedTabs .tab .close,
 #pinnedTabs .tab .name {
-	display: none;
+  display: none;
 }
 
 #pinnedTabs .tab .inner {
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-image: none !important;
-	border: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background-image: none !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 #pinnedTabs .tab .favicon {
-	background-color: transparent;
-	border: 0;
-	position: relative;
+  border: 0;
+  background-color: transparent;
+  position: relative;
 }
 
 #pinnedTabs .tab .thumbnail {
-	bottom: 0;
-	filter: brightness(0.8);
+  bottom: 0;
+  filter: brightness(0.8);
 }
 
 .toolbar-right,
 .toolbar-left {
-	flex-direction: row;
+  flex-direction: row;
 }
 
 .toolbar-right #toolbar,
 .toolbar-left #toolbar {
-	flex-direction: column;
-	border-bottom: none;
+  flex-direction: column;
+  border-bottom: none;
 }
 
 .toolbar-bottom #toolbar,
 .toolbar-right #toolbar {
-	order: 1;
+  order: 1;
 }
 
 .toolbar-right #toolbar {
-	border-left: 1px solid var(--toolbar-border-color);
+  border-left: 1px solid var(--toolbar-border-color);
 }
 
 .toolbar-bottom #toolbar {
-	border-top: 1px solid var(--toolbar-border-color);
-	border-bottom: none;
+  border-top: 1px solid var(--toolbar-border-color);
+  border-bottom: none;
 }
 
 .toolbar-left #toolbar {
-	border-right: 1px solid var(--toolbar-border-color);
+  border-right: 1px solid var(--toolbar-border-color);
 }
 
 .toolbar-right #pinnedTabs,
 .toolbar-left #pinnedTabs {
-	flex-direction: column;
-	border-top: 1px solid var(--pinnedTabs-border-color);
-	border-left: none;
-	margin-top: 4px;
-	margin-left: 0;
-	padding: 4px 0;
+  flex-direction: column;
+  border-top: 1px solid var(--pinnedTabs-border-color);
+  border-left: none;
+  margin-top: 4px;
+  margin-left: 0;
+  padding: 4px 0;
 }

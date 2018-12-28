@@ -1,5 +1,5 @@
 :root {
-	--group-inner-border-color: rgba(12, 12, 13, 0.2);
+  --group-inner-border-color: rgba(12, 12, 13, 0.2);
 	--group-inner-background-color: #ededf0;
 	--group-header-input-border-color: rgba(12, 12, 13, 0.2);
 	--group-header-input-background-color: #f9f9f9;
@@ -11,71 +11,63 @@
 }
 
 .theme-dark {
-	--group-inner-border-color: rgba(249, 249, 250, 0.2);
-	--group-inner-background-color: #0c0c0d;
-	--group-header-input-color: #b1b1b3;
-	--group-header-input-edit-color: #f9f9fa;
-	--group-header-tab_count-background-color: rgba(249, 249, 250, 0.2);
-	--group-header-tab_count-color: #b1b1b3;
-	--group-header-close-icon: url(/icons/group_close_dark.svg);
+  --group-inner-border-color: rgba(249, 249, 250, 0.2);
+  --group-inner-background-color: #0c0c0d;
+  --group-header-input-color: #b1b1b3;
+  --group-header-input-edit-color: #f9f9fa;
+  --group-header-tab_count-background-color: rgba(249, 249, 250, 0.2);
+  --group-header-tab_count-color: #b1b1b3;
+  --group-header-close-icon: url(/icons/group_close_dark.svg);
 }
 
 .group {
-	display: flex;
-	position: absolute;
+  display: flex;
+  position: absolute;
 }
 
 .group > .inner {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 4px;
-	left: 4px;
-	right: 4px;
-	bottom: 4px;
-
-	border: 1px solid var(--group-inner-border-color);
-	border-radius: 4px;
-
-	background-color: var(--group-inner-background-color);
-	box-shadow: 0 0 1px #fff;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--group-inner-border-color);
+  border-radius: 4px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: 4px;
+  background-color: var(--group-inner-background-color);
+  box-shadow: 0 0 1px #fff;
 }
 
 .group .header {
-	display: flex;
-	justify-content: stretch;
-	align-items: flex-start;
-	height: 23px;
-	margin: 5px 10px 0;
-
-	cursor: move;
+  display: flex;
+  justify-content: stretch;
+  align-items: flex-start;
+  height: 23px;
+  margin: 5px 10px 0;
+  cursor: move;
 }
 
 .group .header input,
 .group .header .name {
-	padding: 0 5px 0 0;
-
-	color: var(--group-header-input-color);
-	font-size: 13px;
-	line-height: 18px;
-	white-space: nowrap;
-	text-overflow: '..';
-
-	overflow: hidden;
+  padding: 0 5px 0 0;
+  color: var(--group-header-input-color);
+  font-size: 13px;
+  line-height: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .group .header input {
-	display: none;
-
-	border: none;
-
-	background: none;
-
-	font-family: inherit;
+  display: none;
+  border: none;
+  background: none;
+  font-family: inherit;
 }
 
 .group .header .name {
-	cursor: text;
+  cursor: text;
 }
 
 .group .header .spacer {
@@ -94,7 +86,7 @@
 }
 
 .group .header.edit .name {
-	display: none;
+  display: none;
 }
 
 .group .header.edit .spacer {
@@ -102,125 +94,104 @@
 }
 
 .group .header .tab_count {
-	margin-top: -5px;
-	margin-right: 5px;
-	padding: 3px 5px 3px 5px;
-
-	border-radius: 0 0 3px 3px;
-
-	background-color: var(--group-header-tab_count-background-color);
-
-	color: var(--group-header-tab_count-color);
-	font-size: 12px;
-	font-family: inherit;
-	font-weight: bold;
-	line-height: 20px;
+  border-radius: 0 0 3px 3px;
+  margin-top: -5px;
+  margin-right: 5px;
+  padding: 3px 5px 3px 5px;
+  background-color: var(--group-header-tab_count-background-color);
+  color: var(--group-header-tab_count-color);
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .group .header .close {
-	width: 20px;
-	height: 20px;
-	margin-right: -5px;
-	position: relative;
-
-	cursor: pointer;
-
-	background-image: var(--group-header-close-icon);
-	background-repeat: no-repeat;
-	background-size: 12px;
-	background-position: center;
+  width: 20px;
+  height: 20px;
+  margin-right: -5px;
+  position: relative;
+  background-image: var(--group-header-close-icon);
+  background-position: center;
+  background-size: 12px;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .group .content {
-	flex-grow: 1;
-	margin: 4px;
-	position: relative;
+  flex-grow: 1;
+  margin: 4px;
+  position: relative;
 }
 
 .group .top {
-	height: 7px;
-
-	position: absolute;
-	top: -2px;
-	left: 20px;
-	right: 20px;
-
-	cursor: ns-resize;
+  height: 7px;
+  position: absolute;
+  top: -2px;
+  right: 20px;
+  left: 20px;
+  cursor: ns-resize;
 }
 
 .group .right {
-	width: 7px;
-
-	position: absolute;
-	top: 20px;
-	bottom: 20px;
-	right: -2px;
-
-	cursor: ew-resize;
+  width: 7px;
+  position: absolute;
+  top: 20px;
+  right: -2px;
+  bottom: 20px;
+  cursor: ew-resize;
 }
 
 .group .bottom {
-	height: 7px;
-
-	position: absolute;
-	bottom: -2px;
-	left: 20px;
-	right: 20px;
-
-	cursor: ns-resize;
+  height: 7px;
+  position: absolute;
+  right: 20px;
+  bottom: -2px;
+  left: 20px;
+  cursor: ns-resize;
 }
 
 .group .left {
-	width: 7px;
-
-	position: absolute;
-	top: 20px;
-	bottom: 20px;
-	left: -2px;
-
-	cursor: ew-resize;
+  width: 7px;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: -2px;
+  cursor: ew-resize;
 }
 
 .group .top_right {
-	width: 22px;
-	height: 22px;
-
-	position: absolute;
-	top: -2px;
-	right: -2px;
-
-	cursor: nesw-resize;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  cursor: nesw-resize;
 }
 
 .group .bottom_right {
-	width: 22px;
-	height: 22px;
-
-	position: absolute;
-	bottom: -2px;
-	right: -2px;
-
-	cursor: nwse-resize;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  cursor: nwse-resize;
 }
 
 .group .bottom_left {
-	width: 22px;
-	height: 22px;
-
-	position: absolute;
-	bottom: -2px;
-	left: -2px;
-
-	cursor: nesw-resize;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  cursor: nesw-resize;
 }
 
 .group .top_left {
-	width: 22px;
-	height: 22px;
-
-	position: absolute;
-	top: -2px;
-	left: -2px;
-
-	cursor: nwse-resize;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  cursor: nwse-resize;
 }

@@ -1,23 +1,22 @@
-
 h2 {
-	border-bottom: solid 1px #d7d7db;
-	line-height: 2em;
+  border-bottom: solid 1px #d7d7db;
+  line-height: 2em;
 }
 
 .keyboardShortcuts label {
-	width: 220px;
-	display: inline-block;
-	line-height: 2em;
+  display: inline-block;
+  width: 220px;
+  line-height: 2em;
 }
 
 .keyboardShortcuts button {
-	width: 80px;
-	text-align: center;
-	margin: 0em;
+  width: 80px;
+  margin: 0em;
+  text-align: center;
 }
 
 .keyboardShortcuts input {
-	width: 120px;
+  width: 120px;
 }
 
 .input-radio-image {
