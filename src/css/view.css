@@ -1,4 +1,24 @@
 :root {
+  /* *** Firefox theme colors *** */
+  /* Toolbar Color */
+  --color-toolbar: ;
+  /* Toolbar Icons and Text */
+  --color-toolbar-text: ;
+  /* Background Color */
+  --color-accentcolor: ;
+  /* Background Tab Text Color */
+  --color-textcolor: ;
+  /* Search Bar Color */
+  --color-toolbar-field: ;
+  /* Search Text */
+  --color-toolbar-field-text: ;
+  /* Tab Highlight Color */
+  --color-tab-line: ;
+  /* Popup Background */
+  --color-popup: ;
+  /* Popup Text */
+  --color-popup-text: ;
+
   --body-background-color: #d7d7db;
   --toolbar-border-color: rgba(12, 12, 13, 0.1);
   --toolbar-button-hover: rgba(12, 12, 13, 0.1);
