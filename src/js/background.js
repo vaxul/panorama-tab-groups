@@ -78,7 +78,7 @@ function changeMenu(message) {
     }
 }
 
-async function moveTab(tabId, groupId) {
+async function moveTab(tabId, groupId, activeTabId) {
     let windowId = (await browser.windows.getCurrent()).id;
     await browser.sessions.setTabValue(tabId, 'groupId', parseInt(groupId));
 
@@ -86,7 +86,13 @@ async function moveTab(tabId, groupId) {
     await browser.tabs.move(tabId, {index: toIndex});
 
     let activeGroup = (await browser.sessions.getWindowValue(windowId, 'activeGroup'));
-    await toggleVisibleTabs(activeGroup);
+    
+    console.log(activeTabId == tabId, activeTabId, tabId);
+    if (activeTabId && activeTabId == tabId) {
+      await toggleVisibleTabs(activeGroup, null, tabId, groupId);
+    } else {
+      await toggleVisibleTabs(activeGroup, null);
+    }
 
 }
 
@@ -137,7 +143,7 @@ async function menuClicked(info, tab) {
                     await browser.tabs.update(newActiveTab.id, {active: true});
                 }
 
-                moveTab(tab.id, info.menuItemId);
+                moveTab(tab.id, info.menuItemId, activeTabId);
             }
     }
 }
@@ -262,41 +268,51 @@ async function tabActivated(activeInfo) {
     await toggleVisibleTabs(activeGroup);
 }
 
-async function toggleVisibleTabs(activeGroup, noTabSelected) {
-    // Show and hide the appropriate tabs
-    const tabs = await browser.tabs.query({currentWindow: true});
+async function toggleVisibleTabs(activeGroup, noTabSelected, tabId, groupId) {
+  // Show and hide the appropriate tabs
+  const tabs = await browser.tabs.query({ currentWindow: true });
 
-    let showTabIds = [];
-    let hideTabIds = [];
-    let showTabs = [];
+  let showTabIds = [];
+  let hideTabIds = [];
+  let showTabs = [];
 
-    await Promise.all(tabs.map(async(tab) => {
-        try{
-            let groupId = await browser.sessions.getTabValue(tab.id, 'groupId');
+  if (groupId) {
+      activeGroup = groupId;
+  }
 
-            if(groupId != activeGroup) {
-                hideTabIds.push(tab.id)
-            }else{
-                showTabIds.push(tab.id)
-                showTabs.push(tab)
-            }
-        } catch {
-            //The tab has probably been closed, this should be safe to ignore
+  await Promise.all(
+    tabs.map(async tab => {
+      try {
+        let groupId = await browser.sessions.getTabValue(tab.id, "groupId");
+
+        if (groupId != activeGroup) {
+          hideTabIds.push(tab.id);
+        } else {
+          showTabIds.push(tab.id);
+          showTabs.push(tab);
         }
-    }));
+      } catch {
+        //The tab has probably been closed, this should be safe to ignore
+      }
+    })
+  );
 
-    if(noTabSelected) {
-        showTabs.sort((tabA, tabB) => tabB.lastAccessed - tabA.lastAccessed);
-        await browser.tabs.update(showTabs[0].id, {active: true});
-    }
+  if (noTabSelected) {
+    showTabs.sort((tabA, tabB) => tabB.lastAccessed - tabA.lastAccessed);
+    await browser.tabs.update(showTabs[0].id, { active: true });
+  }
 
-    await browser.tabs.hide(hideTabIds);
-    await browser.tabs.show(showTabIds);
-    
-    if (activeGroup >= 0) {
-        let window = await browser.windows.getLastFocused();
-        await setActionTitle(window.id, activeGroup);
-    }
+  await browser.tabs.hide(hideTabIds);
+  await browser.tabs.show(showTabIds);
+
+  if (tabId && groupId) {
+    await browser.tabs.update(tabId, { active: true });
+  }
+
+  if (activeGroup >= 0) {
+    let window = await browser.windows.getLastFocused();
+    await setActionTitle(window.id, activeGroup);
+  }
 }
 
 /** Set extension icon tooltip and numGroups to icon **/
